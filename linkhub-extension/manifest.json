@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "LinkHub LinkedIn Session Manager",
+  "version": "1.0.0",
+  "description": "Extracts LinkedIn session cookie (li_at) and sends it to the LinkHub backend.",
+  "permissions": ["cookies", "storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Send LinkedIn Session"
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "externally_connectable": {
+    "matches": ["http://localhost:3000/*"]
+  }
+}
